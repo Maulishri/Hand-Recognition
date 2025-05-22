@@ -2,25 +2,59 @@
 
 Identifies the presense of a hand in the frame and identifies the number of fingers being held up.
 
-# Algorithm
+## Overview
 
-SET                 Camera on
-READ              Available frame
-SET                  Frame as 1st one 
-	           Region of interest
-CONVERT       Change from BGR color scheme to hsv/black and white
-DEFINE            Skin color range
-MASK              Extract and mask skin color (Gaussian blur) 
-FIND                All possible Contours; followed by ones of greatest area
-MAKE              Convex hull around the hand; define area of hand
-FIND                The defects in convex hull due to hand
-                         Defects due to fingers 
-	            Distance and angle between point and convex hull
-DO                    Ignore angle>90 
-                          Draw boundary around hand/ finger tips (whatever be the case)
-                          Count number of fingers
-PRINT               The number observed based on the mix match of hull area and nodes
-CLOSE               Quit Camera when exit condition is met
+The system uses OpenCV to detect the region of interest (ROI), apply skin color filtering, analyze contours, and identify finger positions based on convex hulls and convexity defects.
+
+---
+
+## Process Breakdown
+
+### 1. **SET**
+- Turn the **Camera On**
+
+### 2. **READ**
+- Capture an **Available Frame**
+
+### 3. **SET**
+- Mark the captured frame as the **First Frame**
+- Define the **Region of Interest (ROI)** where the hand is expected
+
+### 4. **CONVERT**
+- Convert the image from **BGR** to **HSV** or **Black and White**
+
+### 5. **DEFINE**
+- Define the **Skin Color Range** for masking
+
+### 6. **MASK**
+- Extract and mask the skin color region
+- Apply **Gaussian Blur** for smoothing
+
+### 7. **FIND**
+- Detect **All Contours** in the masked image
+- Select the contour with the **Largest Area** (presumably the hand)
+
+### 8. **MAKE**
+- Construct the **Convex Hull** around the hand
+- Measure and define the **Area of the Hand**
+
+### 9. **FIND**
+- Identify **Convexity Defects** (gaps between fingers)
+- Measure **Distance and Angle** between defect points and the convex hull
+
+### 10. **DO**
+- **Ignore** defects with an **Angle > 90°**
+- Draw **Boundaries** around the hand and/or fingertips
+- **Count the Number of Fingers**
+
+### 11. **PRINT**
+- Output the detected **Number of Fingers**
+- Decision based on the **Hull Area** and **Defect Nodes**
+
+### 12. **CLOSE**
+- **Quit** the camera feed when an **Exit Condition** (e.g., key press) is met
+
+---
 
 # Sample Outputs
 
