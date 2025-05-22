@@ -6,8 +6,6 @@ Identifies the presense of a hand in the frame and identifies the number of fing
 
 The system uses OpenCV to detect the region of interest (ROI), apply skin color filtering, analyze contours, and identify finger positions based on convex hulls and convexity defects.
 
----
-
 ## Process Breakdown
 
 ### 1. **SET**
@@ -54,7 +52,6 @@ The system uses OpenCV to detect the region of interest (ROI), apply skin color 
 ### 12. **CLOSE**
 - **Quit** the camera feed when an **Exit Condition** (e.g., key press) is met
 
----
 
 # Sample Outputs
 
