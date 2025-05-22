@@ -21,4 +21,15 @@ DO                    Ignore angle>90
                           Count number of fingers
 PRINT               The number observed based on the mix match of hull area and nodes
 CLOSE               Quit Camera when exit condition is met
-![image](https://github.com/user-attachments/assets/4b594d90-05ec-492c-b47e-7264585400d6)
+
+# Sample Outputs
+
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/6fc43649-2bbd-4abe-b271-18b9ae5b48e9" />
+
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/79c25fe5-aed0-4ed8-a37e-1a5218f7ae0c" />
+
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/35444f8c-9e05-4031-8044-ac39a67f32ce" />
+
+
+
+
